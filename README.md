@@ -2,6 +2,23 @@
 
 A static, single-product landing site for **Navram Cold-Pressed Mustard Oil (Kachi Ghani)**, built for GitHub Pages. No login, no cart, no client-side payment handling — order status is tracked with an Order ID + phone number instead of an account.
 
+> **⏳ "Coming Soon" mode (current state):** Ordering and payment are not live yet.
+> The Order Form and Track Order sections are commented out of `index.html` and
+> replaced with a "Coming Soon" notice + WhatsApp link. A "Coming Soon" banner
+> runs across the top of every page. All disabled UI is preserved, not deleted:
+> - The original Order Form + Track Order markup lives in
+>   `order-section.html.disabled` (paste back into `index.html` when ready).
+> - Nav links, hero CTA, and the Product Showcase CTA were changed to
+>   non-interactive "Coming Soon" states — swap them back to `#order` /
+>   `#track` links once the sections are restored.
+> - No backend/config logic was removed from `script.js`; it's already
+>   null-safe against missing form elements, so nothing breaks with the
+>   sections disabled.
+>
+> To go live: restore the two sections from `order-section.html.disabled`,
+> restore the nav/hero/product CTA links and labels, then follow the rest of
+> this README to wire up `ORDER_ENDPOINT` / `ORDER_STATUS_ENDPOINT`.
+
 ```
 navram-site/
 ├── index.html

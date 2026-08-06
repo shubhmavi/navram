@@ -126,6 +126,12 @@ a { color: inherit; }
 .btn--small { padding: 9px 20px; font-size: 0.85rem; }
 .btn--full { width: 100%; }
 .btn[disabled] { opacity: 0.65; cursor: not-allowed; transform: none !important; }
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn--disabled:hover { transform: none; box-shadow: none; }
 
 .btn-spinner {
   display: none;
@@ -182,6 +188,60 @@ a { color: inherit; }
 }
 
 .section { padding: 88px 0; position: relative; }
+
+/* ---------- Coming Soon Banner ---------- */
+.coming-soon-banner {
+  background: var(--maroon);
+  color: var(--cream);
+  position: relative;
+  z-index: 210;
+}
+.coming-soon-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+}
+.coming-soon-banner__badge {
+  flex-shrink: 0;
+  display: inline-block;
+  background: var(--gold);
+  color: var(--maroon-deep);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.coming-soon-banner__text { color: var(--cream); }
+.coming-soon-banner__text a {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.coming-soon-banner__text a:hover { color: var(--gold); }
+
+/* ---------- Coming Soon Notice (replaces order form) ---------- */
+.order-section--coming-soon { background: var(--cream-warm); }
+.coming-soon-notice {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.coming-soon-notice .btn { margin-top: 8px; }
+
+.final-cta__note {
+  color: var(--gold-light);
+  font-size: 0.95rem;
+  margin: -8px 0 24px;
+  text-align: center;
+}
 
 /* ---------- Header / Nav ---------- */
 .site-header {

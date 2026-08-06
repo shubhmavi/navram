@@ -50,7 +50,10 @@
     PRICE_PER_BOTTLE_INR: 349,
 
     // Default WhatsApp prefilled message
-    WHATSAPP_MESSAGE: "Hi Navram! I'd like to order a bottle of Cold-Pressed Mustard Oil (1 Ltr)."
+    // NOTE: Online ordering is currently disabled ("Coming Soon" phase),
+    // so this message asks about availability/launch rather than placing
+    // an order. Update this once ordering goes live.
+    WHATSAPP_MESSAGE: "Hi Navram! I saw your website — when will online ordering for the Cold-Pressed Mustard Oil be available?"
   };
 
   const ENDPOINTS_CONFIGURED = Boolean(CONFIG.ORDER_ENDPOINT && CONFIG.ORDER_STATUS_ENDPOINT);
@@ -97,7 +100,7 @@
   // ===================================================================
   // WhatsApp links (wired safely, no innerHTML)
   // ===================================================================
-  ['heroWhatsapp', 'orderWhatsapp', 'finalWhatsapp'].forEach(function (id) {
+  ['heroWhatsapp', 'orderWhatsapp', 'finalWhatsapp', 'bannerWhatsapp'].forEach(function (id) {
     const el = document.getElementById(id);
     if (el) el.setAttribute('href', buildWhatsAppLink());
   });

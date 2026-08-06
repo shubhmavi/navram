@@ -1,0 +1,105 @@
+<!--
+  Original Order Form + Track Order sections, preserved here while
+  disabled on the live site during the 'Coming Soon' phase.
+  To restore: paste this block back into index.html in place of the
+  '#order' Coming Soon Notice section, and revert the nav/hero/product
+  CTAs and script.js element IDs as needed.
+-->
+
+<!-- ============ ORDER FORM ============ -->
+<section class="section order-section" id="order">
+  <div class="wrap order-grid">
+    <div class="order-intro fade-up">
+      <p class="eyebrow">Place an Order</p>
+      <h2 class="section-title section-title--left">Two ways to order. Zero accounts to create.</h2>
+      <p>Fill the form and pay securely — you'll get an Order ID to track your delivery. Prefer to chat? Order on WhatsApp instead.</p>
+      <a href="#" id="orderWhatsapp" class="btn btn--outline" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.3A8.6 8.6 0 0 0 12 4a8.7 8.7 0 0 0-7.6 12.9L3 21l4.2-1.3A8.7 8.7 0 0 0 12 20.7 8.7 8.7 0 0 0 20.7 12a8.6 8.6 0 0 0-3.1-5.7Zm-5.6 13a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.5.8.8-2.4-.2-.3a7.3 7.3 0 1 1 5.9 3.1Zm4-5.5c-.2-.1-1.3-.7-1.5-.7-.2-.1-.4-.1-.5.1s-.6.7-.7.8-.3.2-.5.1a6 6 0 0 1-1.8-1.1 6.6 6.6 0 0 1-1.2-1.5c-.1-.2 0-.3.1-.4l.4-.4.2-.4v-.4c-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.6 10.6 0 0 0 4 3.6c.6.2 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1c.5-.1 1.3-.5 1.5-1s.2-.9.1-1c0-.2-.2-.2-.4-.3Z"/></svg>
+        Order on WhatsApp instead
+      </a>
+      <div class="order-intro__badge">
+        <strong>&#128274; Secure checkout</strong>
+        <span>Payment is completed on Cashfree/PhonePe's own secure page. We never see or store your card, UPI PIN, or bank details.</span>
+      </div>
+    </div>
+
+    <form class="order-form fade-up" id="orderForm" novalidate>
+      <h3 class="order-form__title">Order Details</h3>
+
+      <div class="form-row">
+        <label for="ofName">Full name</label>
+        <input type="text" id="ofName" name="name" autocomplete="name" required maxlength="100">
+        <span class="form-error" id="err-ofName" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="ofPhone">Phone number</label>
+        <input type="tel" id="ofPhone" name="phone" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number" required pattern="[0-9]{10}" maxlength="10">
+        <span class="form-hint">We'll send order &amp; delivery updates here.</span>
+        <span class="form-error" id="err-ofPhone" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="ofAddress">Delivery address</label>
+        <textarea id="ofAddress" name="address" autocomplete="street-address" rows="3" required maxlength="500"></textarea>
+        <span class="form-error" id="err-ofAddress" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="ofPincode">Pincode</label>
+        <input type="text" id="ofPincode" name="pincode" inputmode="numeric" autocomplete="postal-code" required pattern="[0-9]{6}" maxlength="6">
+        <span class="form-error" id="err-ofPincode" role="alert"></span>
+      </div>
+
+      <div class="form-row form-row--qty">
+        <label for="ofQty">Quantity (1 Ltr bottles)</label>
+        <div class="qty-control">
+          <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">&minus;</button>
+          <input type="number" id="ofQty" name="quantity" value="1" min="1" max="20" required inputmode="numeric">
+          <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <div class="order-form__total" id="orderTotal" aria-live="polite">
+        <span>Estimated total</span>
+        <strong id="orderTotalValue">&#8377;&nbsp;&mdash;</strong>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full" id="orderSubmitBtn">
+        <span class="btn-label">Proceed to Payment</span>
+        <span class="btn-spinner" aria-hidden="true"></span>
+      </button>
+      <p class="order-form__status" id="orderFormStatus" role="status" aria-live="polite"></p>
+      <p class="order-form__fineprint">By ordering, you agree to our <a href="#" data-modal="terms">Terms</a> and <a href="#" data-modal="privacy">Privacy Policy</a>. You'll be redirected to our payment partner to complete payment securely.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ TRACK ORDER ============ -->
+<section class="section track" id="track">
+  <div class="wrap track__inner">
+    <p class="eyebrow eyebrow--center">No Login Needed</p>
+    <h2 class="section-title">Track your order</h2>
+    <p class="section-lede">Enter your Order ID and the phone number you used while ordering.</p>
+
+    <form class="track-form fade-up" id="trackForm" novalidate>
+      <div class="form-row">
+        <label for="trkOrderId">Order ID</label>
+        <input type="text" id="trkOrderId" name="orderId" placeholder="e.g. ORD-8F3K2" required maxlength="40" autocomplete="off">
+        <span class="form-error" id="err-trkOrderId" role="alert"></span>
+      </div>
+      <div class="form-row">
+        <label for="trkPhone">Phone number</label>
+        <input type="tel" id="trkPhone" name="phone" inputmode="numeric" placeholder="10-digit mobile number" required pattern="[0-9]{10}" maxlength="10" autocomplete="off">
+        <span class="form-error" id="err-trkPhone" role="alert"></span>
+      </div>
+      <button type="submit" class="btn btn--primary" id="trackSubmitBtn">
+        <span class="btn-label">Check Status</span>
+        <span class="btn-spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+
+    <div class="track-result" id="trackResult" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
