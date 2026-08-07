@@ -39,8 +39,7 @@
     ORDER_STATUS_ENDPOINT: '',
 
     // WhatsApp number in international format, digits only, no + or spaces.
-    // Example for +91 90589 33275: "919058933275"
-    WHATSAPP_NUMBER: '919058933275',
+    WHATSAPP_NUMBER: '919058935275',
 
     // Price per 1L bottle in INR (whole rupees). Used only to SHOW an
     // estimated total to the customer before checkout. The real,

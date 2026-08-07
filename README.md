@@ -67,7 +67,7 @@ Open `script.js` and find the `CONFIG` object near the top:
 const CONFIG = {
   ORDER_ENDPOINT: '',            // <-- fill in your API Gateway "create order" URL
   ORDER_STATUS_ENDPOINT: '',     // <-- fill in your API Gateway "order status" URL
-  WHATSAPP_NUMBER: '919058933275',
+  WHATSAPP_NUMBER: '919058935275',
   PRICE_PER_BOTTLE_INR: 349,     // <-- display-only estimate, NOT the source of truth (see below)
   WHATSAPP_MESSAGE: "Hi Navram! I'd like to order a bottle of Cold-Pressed Mustard Oil (1 Ltr)."
 };
