@@ -1,6 +1,6 @@
-# Navram — Cold-Pressed Mustard Oil Landing Site
+# Navram — Mustard Oil Landing Site
 
-A static, single-product landing site for **Navram Cold-Pressed Mustard Oil (Kachi Ghani)**, built for GitHub Pages. No login, no cart, no client-side payment handling — order status is tracked with an Order ID + phone number instead of an account.
+A static, single-product landing site for **Navram Mustard Oil (Kachi Ghani)**, built for GitHub Pages. No login, no cart, no client-side payment handling — order status is tracked with an Order ID + phone number instead of an account.
 
 > **⏳ "Coming Soon" mode (current state):** Ordering and payment are not live yet.
 > The Order Form and Track Order sections are commented out of `index.html` and
@@ -69,7 +69,7 @@ const CONFIG = {
   ORDER_STATUS_ENDPOINT: '',     // <-- fill in your API Gateway "order status" URL
   WHATSAPP_NUMBER: '919058935275',
   PRICE_PER_BOTTLE_INR: 349,     // <-- display-only estimate, NOT the source of truth (see below)
-  WHATSAPP_MESSAGE: "Hi Navram! I'd like to order a bottle of Cold-Pressed Mustard Oil (1 Ltr)."
+  WHATSAPP_MESSAGE: "Hi Navram! I'd like to order a bottle of Mustard Oil (1 Ltr)."
 };
 ```
 

@@ -52,7 +52,7 @@
     // NOTE: Online ordering is currently disabled ("Coming Soon" phase),
     // so this message asks about availability/launch rather than placing
     // an order. Update this once ordering goes live.
-    WHATSAPP_MESSAGE: "Hi Navram! I saw your website — when will online ordering for the Cold-Pressed Mustard Oil be available?"
+    WHATSAPP_MESSAGE: "Hi Navram! I saw your website — when will online ordering for the Mustard Oil be available?"
   };
 
   const ENDPOINTS_CONFIGURED = Boolean(CONFIG.ORDER_ENDPOINT && CONFIG.ORDER_STATUS_ENDPOINT);
